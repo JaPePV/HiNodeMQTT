@@ -1,0 +1,193 @@
+/* Allgemeine Einstellungen */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Wrapper für die gesamte Seite */
+#Wrapper-Startpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header-Bereich */
+#Wrapper-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    color: white;
+    padding: 10px 5px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#Header-Logo1, #Header-Logo2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Header-Name {
+    flex: 2;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Information über den MQTT Broker */
+#Wrapper-MQTT-Info {
+    background-color: white;
+    border-radius: 8px;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#Wrapper-MQTT-Info h2 {
+    font-size: 24px;
+    color: rgba(221, 21, 65, 0.8);
+    margin-bottom: 10px;
+}
+
+#Wrapper-MQTT-Info p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Nachrichtenbereich */
+#Wrapper-MQTT-Messages {
+    background-color: white;
+    border-radius: 8px;
+    width: 80%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#Wrapper-MQTT-Messages h2 {
+    font-size: 24px;
+    color: rgba(221, 21, 65, 0.8);
+    margin-bottom: 10px;
+}
+
+.mqtt-messages {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+/* Styling für empfangene Nachrichten */
+.mqtt-messages div {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background-color: #e3f2fd;
+    color: grey;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.mqtt-messages div:nth-child(odd) {
+    background-color: #bbdefb;
+}
+
+/* Modernes Styling für SVG-Logos */
+#Header-Logo1 svg, #Header-Logo2 svg {
+    height: 120px;
+    fill: white;
+    transition: transform 0.3s ease;
+}
+
+#Header-Logo1 svg:hover, #Header-Logo2 svg:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    #Wrapper-Header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #Header-Logo1, #Header-Logo2 {
+        margin-bottom: 10px;
+    }
+
+    #Header-Name {
+        margin-bottom: 20px;
+    }
+
+    #Wrapper-MQTT-Info, #Wrapper-MQTT-Messages {
+        width: 95%;
+    }
+}
+/* Passwort Overlay */
+#passwordOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1); /* Volles Schwarz */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Hohe Priorität, um alle anderen Elemente zu überlagern */
+  }
+  
+  /* Verhindert, dass die Hauptseite scrollt */
+  body.lock-scroll {
+    overflow: hidden;
+  }
+  
+  #passwordPrompt {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  #passwordPrompt h2 {
+    margin-bottom: 20px;
+  }
+  
+  #passwordPrompt input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #passwordPrompt button {
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #passwordPrompt button:hover {
+    background-color: #145ca8;
+  }
+  
+  #passwordPrompt p {
+    color: red;
+    margin-top: 10px;
+  }
+  
